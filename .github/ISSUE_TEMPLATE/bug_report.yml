@@ -1,0 +1,61 @@
+name: Bug Report
+description: File a formal defect report for Kryvora Network software components
+title: "[BUG]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please verify the issue occurs on the latest release before opening a report.
+  - type: dropdown
+    id: component
+    attributes:
+      label: Affected Component
+      description: Select the Kryvora software component experiencing the defect
+      options:
+        - kryvora-node (Daemon)
+        - kryvora-cli (Operator Interface)
+        - protocol-specs (Specification)
+        - network-telemetry (Probe Engine)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Software Version
+      description: Exact release tag or commit hash (e.g., v0.2.0)
+      placeholder: v0.2.0
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment and Architecture
+      description: Operating system kernel and CPU architecture (e.g., Ubuntu 24.04 LTS x86_64, Debian 12 aarch64)
+      placeholder: Linux 6.8.0 x86_64
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem Description
+      description: Clear and concise technical description of the defect
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction Steps
+      description: Exact command sequence or configuration payload to reproduce the defect
+      placeholder: |
+        1. Run daemon with config.yaml
+        2. Execute probe command via socket
+        3. Observe exit status
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Daemon Log Excerpt
+      description: Paste relevant journalctl or stdout logs
+      render: shell

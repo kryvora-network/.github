@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Kryvora Network Documentation
+    url: https://docs.kryvora.network
+    about: Read official architecture specifications and node runner guides.
+  - name: Security Vulnerability Reporting
+    url: mailto:security@kryvora.network
+    about: Privately report potential security disclosures.

@@ -1,0 +1,32 @@
+name: Node Telemetry Anomaly
+description: Report socket probe failure, hub disconnection, or peer verification anomaly
+title: "[NODE]: "
+labels: ["node-ops", "telemetry"]
+body:
+  - type: input
+    id: node_id
+    attributes:
+      label: Node Identifier
+      description: Truncated public identity key of the node
+      placeholder: 0x9f8b...
+    validations:
+      required: true
+  - type: dropdown
+    id: probe_type
+    attributes:
+      label: Anomaly Classification
+      options:
+        - Hub Connection Timeout (Port 4188)
+        - Local Socket Probe Rejection (Port 4177)
+        - Verification Challenge State Mismatch
+        - Memory Pressure / Task Buffer Overflow
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostic_output
+    attributes:
+      label: CLI Diagnostic Output
+      description: Output from 'kryvora status --json' or 'kryvora health'
+      render: json
+    validations:
+      required: true

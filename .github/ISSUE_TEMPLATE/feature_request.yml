@@ -1,0 +1,19 @@
+name: Feature Request / RFC Proposal
+description: Propose an architecture enhancement, protocol amendment, or CLI capability
+title: "[PROPOSAL]: "
+labels: ["enhancement", "rfc"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: Clear description of the operational limitation or missing capability
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution / Technical Design
+      description: Technical breakdown of proposed interface, message format, or logic change
+    validations:
+      required: true
